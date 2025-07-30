@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoFix - Car Repair Services</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="#home">Auto Fix</a></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source
+                src="stock-footage-mechanic-asian-man-examining-tuning-fixing-repairing-car-engine-automobile-vehicle-parts-using.webm"
+                type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <script>
+            const video = document.getElementById('bg-video');
+            video.playbackRate = 0.8; 
+        </script>
+
+
+        <div class="overlay"></div>
+
+        <div class="hero-text">
+            <h1>Professional Car Mechanic Services</h1>
+            <p>Trust, skill, and precision — we keep your car running like new.</p>
+            <a href="#contact" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h1>Our Services</h1>
+        <div class="service-cards">
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/64/000000/engine.png" alt="Engine Repair Icon" />
+                <h3>Engine Repair</h3>
+                <p>We provide full engine diagnostics and repair solutions.</p>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/brake-discs.png" />
+                <h3>Brake Service</h3>
+                <p>Safety first! We inspect and replace brake systems.</p>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/ios/50/000000/car-battery.png" />
+                <h3>Battery Check</h3>
+                <p>Dead battery? We'll recharge or replace it fast.</p>
+            </div>
+            <div class="card">
+                <img src="https://svgrepo.com/show/26897/change-car-oil.svg" alt="Oil Change Icon" />
+                <h3>Oil Change</h3>
+                <p>Regular oil changes for a smooth, long-lasting engine performance.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/steering-wheel.png" alt="Wheel Alignment" />
+                <h3>Wheel Alignment</h3>
+                <p>Correct wheel alignment ensures safe and smooth driving.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://static.vecteezy.com/system/resources/previews/015/891/343/non_2x/repair-air-conditioner-icon-outline-style-vector.jpg"
+                    alt="AC Repair Icon" />
+                <h3>AC Repair</h3>
+                <p>Beat the heat with our expert air conditioning repair services.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/tire.png" alt="Tire Services" />
+                <h3>Tire Services</h3>
+                <p>Flat tire? We offer patching, rotation, and tire replacement.</p>
+            </div>
+            <div class="card">
+                <img src="https://www.svgrepo.com/show/10742/diagnostic.svg" alt="Car Diagnostics" />
+                <h3>Car Diagnostics</h3>
+                <p>We use modern tools to detect and fix hidden vehicle issues efficiently.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="before-after" class="before-after-section">
+        <h2 class="section-title">Before & After Transformations</h2>
+        <div class="slider-wrapper">
+            <button class="arrow left">&#10094;</button>
+
+            <div class="slider">
+                <div class="ba-slide">
+                    <div class="ba-images">
+                        <img src="https://nationalautocollisioncenters.com/wp-content/uploads/2019/05/dodge-challenger-auto-body-repair-before.jpg" alt="Before 1">
+                        <img src="https://nationalautocollisioncenters.com/wp-content/uploads/2019/05/dodge-challenger-auto-body-repair-after.jpg" alt="After 1">
+                    </div>
+                </div>
+                <div class="ba-slide">
+                    <div class="ba-images">
+                        <img src="https://nationalautocollisioncenters.com/wp-content/uploads/2019/04/audi-tt-body-auto-body-repair-before.jpg" alt="Before 2">
+                        <img src="https://nationalautocollisioncenters.com/wp-content/uploads/2019/04/audi-tt-body-auto-body-repair-after.jpg" alt="After 2">
+                    </div>
+                </div>
+                <div class="ba-slide">
+                    <div class="ba-images">
+                        <img src="https://nationalautocollisioncenters.com/wp-content/uploads/2019/04/camaro-collision-tucson.jpg" alt="Before 3">
+                        <img src="https://nationalautocollisioncenters.com/wp-content/uploads/2019/04/camaro-collision-center-tucson.jpg" alt="After 3">
+                    </div>
+                </div>
+            </div>
+
+            <button class="arrow right">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        const track = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.ba-slide');
+        const leftArrow = document.querySelector('.arrow.left');
+        const rightArrow = document.querySelector('.arrow.right');
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        function updateSlider(index) {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider(currentIndex);
+        });
+
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider(currentIndex);
+        });
+
+        // Auto-scroll every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider(currentIndex);
+        }, 5000);
+    </script>
+
+    <section id="reviews" class="testimonials">
+        <h1>What Customers Say</h1>
+        <div class="testimonial-cards">
+            <div class="testimonial">
+                <p>“Quick and honest service! Highly recommend AutoFix.”</p>
+                <span>— Rohan M.</span>
+            </div>
+            <div class="testimonial">
+                <p>“They fixed my engine problem in a day. Great experience!”</p>
+                <span>— Priya S.</span>
+            </div>
+            <div class="testimonial">
+                <p>“Affordable pricing and professional team.”</p>
+                <span>— Akash T.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h1>Get in Touch</h1>
+        <form action="https://formsubmit.co/your-email@example.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 AutoFix | All rights reserved | Created by <a href="https://www.instagram.com/metallified" class="creator">Anurag Chakraborty</a></p>
+    </footer>
+
+    <div class="social-buttons">
+        <a href="https://wa.me/918240226009" target="_blank" class="btn whatsapp" title="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+        </a>
+        <a href="https://www.instagram.com/metallified" target="_blank" class="btn instagram" title="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+        </a>
+        <a href="#" target="_blank" class="btn facebook" title="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+        </a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.navbar {
+    background: #000000;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logo a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 40px;
+    font-family: Bebas Neue;
+    letter-spacing: 2px;
+}
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1608667591400-9c25db2c9e37') no-repeat center center/cover;
+    color: #000000;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #000000;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #252424;
+}
+
+.services,
+.testimonials,
+.contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    scroll-margin-top: 20px;
+}
+
+.service-cards,
+.testimonial-cards {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 2rem;
+}
+
+.card,
+.testimonial {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contact button {
+    padding: 1rem;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background: #111;
+    color: white;
+    padding: 1rem 0;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero-text {
+    z-index: 1;
+    max-width: 80%;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.social-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    animation: slideIn 0.6s ease-in-out;
+}
+
+.social-buttons .btn {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    transition: transform 0.3s ease, background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.social-buttons .btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-buttons .btn:hover {
+    transform: scale(1.15);
+    background-color: #444;
+}
+
+/* Optional: Slide in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services,
+.testimonials,
+.contact {
+    font-size: 20px;
+}
+
+.before-after-section {
+  background: #f4f4f4;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.ba-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.ba-images {
+  display: flex;
+  width: 100%;
+}
+
+.ba-images img {
+  width: 50%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #000;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.arrow:hover { opacity: 1; }
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+.creator{
+    color: darkturquoise;
+    text-decoration: solid;
+}
+
+.creator:hover{
+    color: darkcyan;
+}
